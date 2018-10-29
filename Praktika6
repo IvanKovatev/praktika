@@ -1,0 +1,26 @@
+public class Main {
+
+    public static void main(String[] args) {
+      Student.Stud();   //Метод
+    }
+}
+
+class Student {
+  public static void Stud() {
+      String[] iDNumber  = new String[10];  //Объявление массива
+      iDNumber [0] = "1. \tИмя: Иван \t\tФамилия: Коватьев";
+      iDNumber [1] = "2. \tИмя: Александр \tФамилия: Артемов";
+      iDNumber [2] = "3. \tИмя: Григорий \tФамилия: Простяков";
+      iDNumber [3] = "4. \tИмя: Федор \t\tФамилия: Фурсов";
+      iDNumber [4] = "5. \tИмя: Амэр \t\tФамилия: Халве";
+      iDNumber [5] = "6. \tИмя: Анастасия \tФамилия: Хромова";
+      iDNumber [6] = "7. \tИмя: Юлия \t\tФамилия: Суркова";
+      iDNumber [7] = "8. \tИмя: Влад \t\tФамилия: Ануфриев";
+      iDNumber [8] = "9. \tИмя: Эмир \t\tФамилия: Гаджимуратов";
+      iDNumber [9] = "10. Имя: Радмир \tФамилия: Акжигитов";
+
+      for (int i =  0; i < 10; i++ ) {  //Сортировка
+          System.out.println(iDNumber[i]);
+      }
+   }
+}
