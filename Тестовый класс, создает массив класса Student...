@@ -1,28 +1,47 @@
 Написать тестовый класс, который создает массив класса Student и сортирует массив iDNumber.
 
 public class Main {
-
     public static void main(String[] args) {
-      Student.Stud();   //Объявляем метод
+        Student student = new Student();
+        student.selectionSort();
+        student.PrintScr();
     }
 }
 
 class Student {
-  public static void Stud() {
-      String[] iDNumber  = new String[10];  //Объявление массива
-      iDNumber [0] = "1. \tИмя: Иван \t\tФамилия: Коватьев";
-      iDNumber [1] = "2. \tИмя: Александр \tФамилия: Артемов";
-      iDNumber [2] = "3. \tИмя: Григорий \tФамилия: Простяков";
-      iDNumber [3] = "4. \tИмя: Федор \t\tФамилия: Фурсов";
-      iDNumber [4] = "5. \tИмя: Амэр \t\tФамилия: Халве";
-      iDNumber [5] = "6. \tИмя: Анастасия \tФамилия: Хромова";
-      iDNumber [6] = "7. \tИмя: Юлия \t\tФамилия: Суркова";
-      iDNumber [7] = "8. \tИмя: Влад \t\tФамилия: Ануфриев";
-      iDNumber [8] = "9. \tИмя: Эмир \t\tФамилия: Гаджимуратов";
-      iDNumber [9] = "10. Имя: Радмир \tФамилия: Акжигитов";
 
-      for (int i =  0; i < 10; i++ ) {  //Сортировка
-          System.out.println(iDNumber[i]);
-      }
-   }
+    public int idNumber[];
+
+    public Student() {
+        idNumber = new int[6];
+        idNumber[0] = 20;
+        idNumber[1] = 12;
+        idNumber[2] = 15;
+        idNumber[3] = 18;
+        idNumber[4] = 30;
+        idNumber[5] = 100;
+    }
+
+    public void selectionSort() {
+        for (int i = 0; i < idNumber.length; i++) {
+            int min = idNumber[i];
+            int min_i = i;
+            for (int j = i + 1; j < idNumber.length - 1; j++)
+                if (idNumber[j] < min) {
+                    min = idNumber[j];
+                    min_i = j;
+                }
+            if (i != min_i) {
+                int tmp = idNumber[i];
+                idNumber[i] = idNumber[min_i];
+                idNumber[min_i] = tmp;
+            }
+        }
+    }
+
+    public void PrintScr() {
+        for (int aIdNumber : idNumber) {
+            System.out.println(aIdNumber);
+        }
+    }
 }
